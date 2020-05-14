@@ -1,10 +1,39 @@
+/* soft reset do css*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-  background-color: #000000;
+  background-color: black;
   font-family: helvetica;
 }
 
+@media (min-width: 400px){
+  body{
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 600px){
+  body{
+    font-size: 18px;
+  }
+}
+
+header {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .menu {
-  background-color: #B6B6B6;
+  background-color: gray;
+  position: fixed;
+  width: 100vw;
+  top: 0;
 }
 
 .menu ul{
@@ -17,17 +46,81 @@ body {
 }
 
 a {
+  color: white;
   text-decoration: none;
+}
+
+.menu a {
+  display: block;
+  padding: 10px 40px;
+
+  /* colocar isso para debugar
+  background-color: red;
+  */
 }
 
 a:hover {
   text-decoration: underline;
 }
 
-
-
-.site-subtitle,
 .site-title{
   color: white;
   text-align: center;
+  font-size: 3em;
+}
+
+.site-subtitle {
+  color: white;
+  font-size: 1.5em;
+  margin-left: 45px;
+}
+
+section h3{
+  text-align: center;
+}
+
+
+.portfolio {
+  padding: 2em;
+  background-color: gray;
+}
+
+.portfolio h3 {
+  color: white;
+  margin-bottom: 1em;
+}
+
+.portfolio .grid{
+  display: grid;
+  gap: 2em;
+}
+
+@media (min-width: 560px ){
+  .portfolio .grid{
+    grid-template-columns: 240px 240px 240px;
+    justify-content: center;
+  }
+}
+
+figcaption {
+  color: white;
+}
+
+.portfolio figure{
+  text-align: center;
+}
+
+.img-galeria {
+  height: 180px;
+  width: 240px;
+  object-fit: cover;
+  border-radius: 5%;
+}
+
+.SF {
+  height: 180px;
+  width: 240px;
+  object-fit: cover;
+  border-radius: 5%;
+  object-position: bottom;
 }
