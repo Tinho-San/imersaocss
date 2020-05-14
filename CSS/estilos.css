@@ -30,7 +30,7 @@ header {
 }
 
 .menu {
-  background-color: gray;
+  background-color: dimgray;
   position: fixed;
   width: 100vw;
   top: 0;
