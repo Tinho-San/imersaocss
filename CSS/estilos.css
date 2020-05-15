@@ -34,6 +34,7 @@ header {
   position: fixed;
   width: 100vw;
   top: 0;
+  z-index: 1;
 }
 
 .menu ul{
@@ -53,14 +54,43 @@ a {
 .menu a {
   display: block;
   padding: 10px 40px;
-
+  transition: background-color 1s, color 1s;
   /* colocar isso para debugar
   background-color: red;
   */
 }
 
-a:hover {
-  text-decoration: underline;
+.menu a:active,
+.menu a:hover {
+  background-color: white;
+  color: black;
+}
+
+.titulo {
+  animation: linear 3s animacaotitulo;
+}
+
+/* titulo vem da direita
+@keyframes animacaotitulo {
+
+  0%{
+  transform: translateX(1000px);
+  }
+
+  100%{
+    transform: translateX(0px);
+  }
+}*/
+
+@keyframes animacaotitulo {
+
+  0%{
+  opacity: 0;
+  }
+
+  100%{
+    opacity: 1;
+  }
 }
 
 .site-title{
@@ -79,25 +109,34 @@ section h3{
   text-align: center;
 }
 
-
-.portfolio {
+.contato,
+.projs {
   padding: 2em;
   background-color: gray;
+  min-height: 100vh;
 }
 
-.portfolio h3 {
+.contato {
+  padding: 2em;
+  background-color: darkgray;
+  min-height: 100vh;
+}
+
+.contato h3,
+.projs h3 {
   color: white;
   margin-bottom: 1em;
+  font-size: 2em;
 }
 
-.portfolio .grid{
+.projs .grid{
   display: grid;
   gap: 2em;
 }
 
 @media (min-width: 560px ){
-  .portfolio .grid{
-    grid-template-columns: 240px 240px 240px;
+  .projs .grid {
+    grid-template-columns: 240px 240px;
     justify-content: center;
   }
 }
@@ -106,15 +145,20 @@ figcaption {
   color: white;
 }
 
-.portfolio figure{
+.projs figure{
   text-align: center;
 }
 
-.img-galeria {
+.img-projs {
   height: 180px;
   width: 240px;
   object-fit: cover;
   border-radius: 5%;
+  transition: transform 500ms;
+}
+
+.img-projs:hover{
+   transform: scale(1.1);
 }
 
 .SF {
@@ -123,4 +167,29 @@ figcaption {
   object-fit: cover;
   border-radius: 5%;
   object-position: bottom;
+  transition: transform 500ms;
+}
+
+.SF:hover{
+   transform: scale(1.1);
+}
+
+.contato a {
+  color: white;
+  font-size: 9em;
+  transition: text-shadow 1s;
+}
+
+.contato a:active, 
+.contato a:hover {
+  text-decoration: none;
+  text-shadow: 0px 10px 10px black;
+}
+
+.contato .icons {
+  text-align: center;
+}
+
+html {
+  scroll-behavior: smooth;
 }
